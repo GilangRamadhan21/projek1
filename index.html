@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skripsi Gilang</title>
+
+    <!-- LINK CSS BOOTSTRAP 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+          crossorigin="anonymous">
+
+    <!-- LINK CSS LEAFLET -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+
+    <!-- SCRIPT JavaScript LEAFLET -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <!-- SCRIPT JavaScript BOOTSTRAP 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+            crossorigin="anonymous"></script>
+
+    <!-- SCRIP Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PARIWISATA LAMPUNG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Destinasi">Destinasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#MapPariwisata">Map Pariwisata</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Script untuk menutup navbar otomatis setelah klik menu -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navLinks = document.querySelectorAll(".nav-item .nav-link");
+            var navbarCollapse = document.querySelector(".navbar-collapse");
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                        toggle: false
+                    });
+                    bsCollapse.hide();
+                });
+            });
+        });
+    </script>
+
+    <!-- Home 1 -->
+    <div class="container-fluid banner">
+        <div class="container text-center">
+            <h4 class="display-6" id="Home">SELAMAT DATANG</h4>
+            <h3 class="display-1">Destinasi Wisata Terbaik di Lampung Timur</h3>
+            <a href="#Destinasi">
+                <button type="button" class="btn btn-danger btn-lg">Jelajahi Sekarang</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Destinasi -->
+    <div class="container-fluid destinasi pt-5 pb-5">
+        <div class="container text-center">
+            <h2 class="display-3" id="Destinasi">Destinasi Wisata Populer</h2>
+
+            <div class="row pt-4">
+                <div class="col-md-4 text-center">
+                    <img src="gambar/destinasi1.jpg" class="img-fluid rounded" alt="Way Kambas">
+                    <h3 class="mt-3">Taman Nasional Way Kambas</h3>
+                    <p>Tempat konservasi gajah dan ekosistem alami yang menakjubkan.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="gambar/destinasi1.jpg" class="img-fluid rounded" alt="Pantai Kerang Mas">
+                    <h3 class="mt-2">Pantai Kerang Mas</h3>
+                    <p>Pasir putih yang indah dan panorama sunset yang memukau.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="gambar/destinasi1.jpg" class="img-fluid rounded" alt="Danau Way Jepara">
+                    <h3 class="mt-2">Danau Way Jepara</h3>
+                    <p>Destinasi sempurna untuk bersantai dan menikmati alam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Pariwisata -->
+    <div class="container-fluid MapPariwisata">
+        <div class="container text-center">
+            <h2 class="display-3" id="MapPariwisata">Map Pariwisata</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, praesentium!</p>
+        </div>
+    </div>
+
+    <!-- Div untuk menampilkan peta -->
+    <div id="container">
+        <div id="map"></div>
+        <div id="deskripsi">
+            <h3>Daftar Wisata</h3>
+            <ul id="list-wisata"></ul>
+            <p>1.ikan</p>
+            <p>2.paus</p>
+        </div>
+    </div>
+    
+    <!-- Memanggil file map.js -->
+    <script src="map.js"></script>
+
+    <!-- Galeri -->
+    <div class="container-fluid Galeri pt-5 pb-5">
+      <div class="container text-center">
+          <h2 class="display-3" id="Galeri">Galeri</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, praesentium!</p>
+      
+          <div class="row pt-4">
+              <!-- Galeri 1 -->
+              <div class="col-md-4 text-center">
+                  <img src="gambar/destinasi1.jpg" class="img-fluid rounded" alt="Lampung Timur">
+                  <h3 class="mt-3">Lampung Timur</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, explicabo!</p>
+              </div>
+
+              <!-- Galeri 2 -->
+              <div class="col-md-4 text-center">
+                  <img src="gambar/destinasi2.jpg" class="img-fluid rounded" alt="Lampung Selatan">
+                  <h3 class="mt-3">Lampung Selatan</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, placeat?</p>
+              </div>
+
+              <!-- Galeri 3 -->
+              <div class="col-md-4 text-center">
+                  <img src="gambar/destinasi3.jpg" class="img-fluid rounded" alt="Lampung Barat">
+                  <h3 class="mt-3">Lampung Barat</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, harum!</p>
+              </div>
+
+              <!-- Galeri 4 -->
+              <div class="col-md-4 text-center">
+                  <img src="gambar/destinasi3.jpg" class="img-fluid rounded" alt="Lampung Tengah">
+                  <h3 class="mt-3">Lampung Tengah</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempore.</p>
+              </div>
+
+              <!-- Galeri 5 -->
+              <div class="col-md-4 text-center">
+                  <img src="gambar/destinasi1.jpg" class="img-fluid rounded" alt="Lampung Utara">
+                  <h3 class="mt-3">Lampung Utara</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quas.</p>
+              </div>
+
+              <!-- Galeri 6 -->
+              <div class="col-md-4 text-center">
+                  <img src="gambar/destinasi2.jpg" class="img-fluid rounded" alt="Lampung Way Kanan">
+                  <h3 class="mt-3">Way Kanan</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis!</p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Kontak -->
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container text-center">
+            <h2 class="display-3" id="Kontak">Kontak</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, praesentium!</p>
+
+            <div class="row pt-4 gx-4 gy-4 justify-content-center">
+                <div class="col-md-4 text-center">
+                    <img src="gambar/profil.jpg" alt="Profil" class="profile-img">
+                    <h4>Gilang Ramadhan</h4>
+                    <p>Mahasiswa Teknik Geodesi</p>
+
+                    <!-- Media Sosial -->
+                    <p class="sosial">
+                        <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-dark text-white text-center py-4">
+        <p>&copy; 2025 Pariwisata Lampung Timur | Dibuat dengan ❤️ oleh Gilang Ramadhan</p>
+    </footer>
+</body>
+</html>
