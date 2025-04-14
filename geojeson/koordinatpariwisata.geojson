@@ -1,0 +1,106 @@
+{
+    "type": "FeatureCollection",
+    "name": "koordinatpariwisata",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 1,
+          "Nama": "Taman Nasional Way Kambas",
+          "Deskripsi": "Taman nasional yang terkenal sebagai pusat konservasi gajah Sumatera dan habitat berbagai satwa liar lainnya.",
+          "Latitude": -5.1172,
+          "Longitude": 105.7739,
+          "Foto": "gambar/waykambas.jpg"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [105.7739, -5.1172]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 2,
+          "Nama": "Danau Way Jepara",
+          "Deskripsi": "Danau alami dengan pemandangan yang indah, cocok untuk rekreasi dan bersantai menikmati keindahan alam.",
+          "Latitude": -5.0,
+          "Longitude": 105.5,
+          "Foto": "gambar/danau_way_jepara.jpg"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [105.5, -5.0]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 3,
+          "Nama": "Pantai Kerang Mas",
+          "Deskripsi": "Pantai dengan pasir putih dan air laut yang jernih, menawarkan berbagai fasilitas seperti ATV dan kuliner lokal.",
+          "Latitude": -5.55,
+          "Longitude": 105.75,
+          "Foto": "gambar/pantai_kerang_mas.jpg"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [105.75, -5.55]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 4,
+          "Nama": "Taman Purbakala Pugung Raharjo",
+          "Deskripsi": "Situs peninggalan sejarah yang menyajikan berbagai artefak megalitikum dan peninggalan purbakala lainnya.",
+          "Latitude": -5.15,
+          "Longitude": 105.75,
+          "Foto": "gambar/pugung_raharjo.jpg"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [105.75, -5.15]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 5,
+          "Nama": "Pantai Cemara Indah",
+          "Deskripsi": "Pantai dengan deretan pohon cemara yang menambah keindahan dan kesejukan suasana pantai.",
+          "Latitude": -5.6,
+          "Longitude": 105.8,
+          "Foto": "gambar/pantai_cemara_indah.jpg"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [105.8, -5.6]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 5,
+          "Nama": "Pantai Cemara Indah banet",
+          "Deskripsi": "Pantai dengan deretan pohon cemara yang menambah keindahan dan kesejukan suasana pantai.",
+          "Latitude": -5.6,
+          "Longitude": 105.8,
+          "Foto": "gambar/pantai_cemara_indah.jpg"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [105.10, -5.6]
+        }
+      }
+
+      
+    ]
+  }
+  
+
